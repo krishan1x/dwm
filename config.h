@@ -79,6 +79,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -91,7 +92,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "ghostty", NULL };
 static const char *webcmd[]   = { "firefox", NULL };
 
 #include "movestack.c"
@@ -128,18 +129,18 @@ static const Key keys[] = {
 	{ MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ ShiftMask|ControlMask,        XK_1,      setlayout,      {.v = &layouts[0]} },
-	{ ShiftMask|ControlMask,        XK_2,      setlayout,      {.v = &layouts[1]} },
-	{ ShiftMask|ControlMask,        XK_3,      setlayout,      {.v = &layouts[2]} },
-	{ ShiftMask|ControlMask,        XK_4,      setlayout,      {.v = &layouts[3]} },
-	{ ShiftMask|ControlMask,        XK_5,      setlayout,      {.v = &layouts[4]} },
-	{ ShiftMask|ControlMask,        XK_6,      setlayout,      {.v = &layouts[5]} },
-	{ ShiftMask|ControlMask,        XK_7,      setlayout,      {.v = &layouts[6]} },
-	{ ShiftMask|ControlMask,        XK_8,      setlayout,      {.v = &layouts[7]} },
-	{ ShiftMask|ControlMask,        XK_9,      setlayout,      {.v = &layouts[8]} },
-	{ ShiftMask|ControlMask,        XK_0,      setlayout,      {.v = &layouts[9]} },
-	{ ShiftMask|ControlMask,        XK_minus,  setlayout,      {.v = &layouts[10]} },
-	{ ShiftMask|ControlMask,        XK_equal,  setlayout,      {.v = &layouts[11]} },
+	{ ALTKEY,                       XK_1,      setlayout,      {.v = &layouts[0]} },
+	{ ALTKEY,                       XK_2,      setlayout,      {.v = &layouts[1]} },
+	{ ALTKEY,                       XK_3,      setlayout,      {.v = &layouts[2]} },
+	{ ALTKEY,                       XK_4,      setlayout,      {.v = &layouts[3]} },
+	{ ALTKEY,                       XK_5,      setlayout,      {.v = &layouts[4]} },
+	{ ALTKEY,                       XK_6,      setlayout,      {.v = &layouts[5]} },
+	{ ALTKEY,                       XK_7,      setlayout,      {.v = &layouts[6]} },
+	{ ALTKEY,                       XK_8,      setlayout,      {.v = &layouts[7]} },
+	{ ALTKEY,                       XK_9,      setlayout,      {.v = &layouts[8]} },
+	{ ALTKEY,                       XK_0,      setlayout,      {.v = &layouts[9]} },
+	{ ALTKEY,                       XK_minus,  setlayout,      {.v = &layouts[10]} },
+	{ ALTKEY,                       XK_equal,  setlayout,      {.v = &layouts[11]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
