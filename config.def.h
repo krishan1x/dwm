@@ -17,12 +17,12 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrainsMono NF:size=10" };
 static const char dmenufont[]       = "JetBrainsMono NF:size=10";
-static const char col_gray1[]       = "#00141d";  // #222222
+static const char col_gray1[]       = "#1a1b26";  // #222222
 static const char col_gray2[]       = "#80bfff";  // #444444
-static const char col_gray3[]       = "#ffffff";  // #bbbbbb
+static const char col_gray3[]       = "#c0caf5";  // #bbbbbb
 static const char col_gray4[]       = "#1a1a1a";  // #eeeeee
-static const char col_cyan[]        = "#b3e5fc";  // #005577
-static const char col_blue[]        = "#4fc3f7";
+static const char col_cyan[]        = "#7aa2f7";  // #005577
+static const char col_blue[]        = "#2ac3de";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray4 },
@@ -101,6 +101,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = webcmd } },
+	{ MODKEY,                       XK_x,      spawn,          SHCMD("keepassxc")},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
